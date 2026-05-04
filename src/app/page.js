@@ -143,6 +143,7 @@ export default function App() {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
+      if (e.isComposing || e.keyCode === 229) return;
       if (e.key === 'Enter') {
         if (document.activeElement === qaInputRef.current || qaOptsVisible) {
           e.preventDefault();
